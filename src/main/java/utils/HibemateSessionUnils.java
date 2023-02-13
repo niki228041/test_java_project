@@ -20,6 +20,15 @@ public class HibemateSessionUnils {
                 config.addAnnotatedClass(UserRole.class);
                 config.addAnnotatedClass(Category.class);
                 config.addAnnotatedClass(Product.class);
+                config.addAnnotatedClass(Filter.class);
+                config.addAnnotatedClass(FilterName.class);
+                config.addAnnotatedClass(FilterValue.class);
+                config.addAnnotatedClass(FilterNameGroups.class);
+                config.addAnnotatedClass(Order.class);
+                config.addAnnotatedClass(OrderItem.class);
+                config.addAnnotatedClass(OrderStatus.class);
+                config.addAnnotatedClass(ProductImage.class);
+                config.addAnnotatedClass(ProductUser.class);
 //                config.addAnnotatedClass(UserRolePK.class);
                 StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder()
                         .applySettings(config.getProperties());

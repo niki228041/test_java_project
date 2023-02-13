@@ -21,24 +21,29 @@ public class Main {
         //roleOperation.crudOper();
 
 
-        Scanner in = new Scanner(System.in);
-        String continue_or_no="";
+//        Scanner in = new Scanner(System.in);
+//        String continue_or_no="";
+//
+//        do{
+//            System.out.println("[1] - pass the test");
+//            System.out.println("[2] - create your own test");
+//            System.out.println("[0] - exit");
+//
+//            continue_or_no = in.nextLine();
+//
+//            switch (continue_or_no)
+//            {
+//                case "1":takeAQuiz();break;
+//                case "2":createQuiz();break;
+//                case "0":System.out.println("See you later!");;break;
+//                default: System.out.println("Wrong answer!"); ;break;
+//            }
+//        }while (!continue_or_no.equals("0"));
 
-        do{
-            System.out.println("[1] - pass the test");
-            System.out.println("[2] - create your own test");
-            System.out.println("[0] - exit");
 
-            continue_or_no = in.nextLine();
+        Session context = HibemateSessionUnils.getSessionFactory().openSession();
+        context.close();
 
-            switch (continue_or_no)
-            {
-                case "1":takeAQuiz();break;
-                case "2":createQuiz();break;
-                case "0":System.out.println("See you later!");;break;
-                default: System.out.println("Wrong answer!"); ;break;
-            }
-        }while (!continue_or_no.equals("0"));
 
     }
 

@@ -1,37 +1,33 @@
 package models;
 
-
 import lombok.Data;
 
 import javax.persistence.*;
 import java.util.List;
 
+
 @Data
 @Entity
-@Table(name = "tbl_product")
-public class Product {
+@Table(name = "tbl_order")
+public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(length = 255,nullable = false)
-    private String name;
-
-    @Column(length = 4255,nullable = false)
-    private String descriprion;
-
-
-    private int price;
+    @ManyToOne
+    @JoinColumn(name="user_id",nullable = false)
+    private User user;
 
     @ManyToOne
-    @JoinColumn(name="category_id",nullable = false)
-    private Category category;
+    @JoinColumn(name="orderStatus_id",nullable = false)
+    private OrderStatus orderStatus;
 
-    @OneToMany(mappedBy = "product")
+    @OneToMany(mappedBy = "order")
     private List<OrderItem> orderItem;
 
     @Temporal(TemporalType.TIMESTAMP)
     private java.util.Date created;
 
     private boolean isDeleted;
+
 }

@@ -28,7 +28,17 @@ public class User {
     @OneToMany(mappedBy = "user")
     private List<UserRole> userRoles;
 
+    @OneToMany(mappedBy = "user")
+    private List<Order> orders;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    private java.util.Date created;
+
+
+    private boolean isDeleted;
+
     public User(){
         userRoles = new ArrayList<>();
+        orders = new ArrayList<>();
     }
 }

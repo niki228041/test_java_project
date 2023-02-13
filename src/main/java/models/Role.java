@@ -21,6 +21,12 @@ public class Role {
     @OneToMany(mappedBy = "role")
     private List<UserRole> userRoles;
 
+    @Temporal(TemporalType.TIMESTAMP)
+    private java.util.Date created;
+
+
+    private boolean isDeleted;
+
     public Role(){
         userRoles = new ArrayList<>();
     }
